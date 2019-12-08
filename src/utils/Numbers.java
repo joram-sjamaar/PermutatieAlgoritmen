@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Random;
+
 public class Numbers {
 
     public static int generateRandomNumber(int min, int max) {
@@ -15,5 +17,18 @@ public class Numbers {
         return false;
     }
 
+    public static int swapPerm(int [] array){
+        int temp, index;
+
+        for (int i = 0; i < array.length; i++) {
+            if (i>1) index = new Random().nextInt(i);
+            else index = 0;
+            temp = array[i];
+            array[i] = array[index];
+            array[index]= temp;
+        }
+
+        return 0;
+    }
 
 }

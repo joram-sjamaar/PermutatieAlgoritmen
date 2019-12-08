@@ -60,7 +60,7 @@ public abstract class Permutation {
             }
 
             /**
-             * This will contain all the results combined so it later can be divided to take an average.
+             * This will contain all the results combined so it later can be divided to calculate an average.
              */
             long result_sum = 0;
 
