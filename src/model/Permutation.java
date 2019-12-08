@@ -75,6 +75,8 @@ public abstract class Permutation {
             System.out.printf("| Average       | %d milliseconds |\n", result_sum/10);
             System.out.println("+--------------+----------------------------+");
 
+          //todo swap perm
+
         }
 
     }

@@ -3,6 +3,7 @@ package model;
 import utils.Numbers;
 
 public class RandomPerm extends Permutation {
+    private int[] numbers;
 
     /**
      * Generates an array with random numbers. Without duplicates
@@ -10,9 +11,9 @@ public class RandomPerm extends Permutation {
      * @param n amount to run with
      */
     @Override
-    protected void run(int n) {
+    public void run(int n) {
 
-        int[] numbers = new int[n]; // 1 statement
+        numbers = new int[n]; // 1 statement
 
         for (int i = 0; i < numbers.length; i++) { // 2 statement, 1 checks, N
             numbers[i] = generateNumber(n, numbers); // 1 statement
@@ -36,4 +37,7 @@ public class RandomPerm extends Permutation {
         }
     }
 
+    public int[] getNumbers() {
+        return numbers;
+    }
 }
