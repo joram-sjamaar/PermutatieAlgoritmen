@@ -1,14 +1,16 @@
 package tests;
 
-import model.InArray;
+import model.UserPerm;
 import model.RandomPerm;
+import model.SwapPerm;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static model.SwapPerm.*;
 
 
 class PermTests {
+    // we'll test every thing 7 times
+    private static final int AMOUNT_OF_TIMES = 7;
 
     /**
      * tests if RandomPerm  works correctly
@@ -36,26 +38,30 @@ class PermTests {
      */
     @Test
     void SwapPermTest() {
-        // original state of array
-        int[] original = {1, 2, 3, 4, 5};
-        // array that will be altered
-        int[] testArray = {1, 2, 3, 4, 5};
+        System.out.println("--+ SwapPermTest +--");
+        for (int i = 0; i < AMOUNT_OF_TIMES; i++) {
+            // original state of array
+            int[] original = {1, 2, 3, 4, 5};
+            // array that will be altered
+            int[] testArray = {1, 2, 3, 4, 5};
 
-        // invoke run method on the test array
-        run(testArray);
-        for (int i1 : original) {
-            System.out.print(i1+" " );
-        }
-        System.out.println("\n");
-        for (int i1 : testArray) {
-            System.out.print(i1+" ");
-        }
-        // check if all original values are in the altered array
-        for (int i : original) {
-            assertTrue(InArray.run(i, testArray));
-        }
+            // invoke run method on the test array
+            SwapPerm.run(testArray);
+            for (int i1 : original) {
+                System.out.print(i1+" " );
+            }
+            System.out.print("| ");
+            for (int i1 : testArray) {
+                System.out.print(i1+" ");
+            }
+            // check if all original values are in the altered array
+            for (int i1 : original) {
+                assertTrue(UserPerm.run(i1, testArray));
+            }
+            System.out.println();
 
 
+        }
     }
 
     /**
@@ -68,8 +74,8 @@ class PermTests {
         // test numbers
         int i = 1, j = 6;
         //should return true
-        assertTrue(InArray.run(i, testArray));
+        assertTrue(UserPerm.run(i, testArray));
         //should return false
-        assertFalse(InArray.run(j, testArray));
+        assertFalse(UserPerm.run(j, testArray));
     }
 }
