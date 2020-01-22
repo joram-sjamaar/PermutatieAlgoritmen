@@ -1,11 +1,11 @@
 package tests;
 
+import model.InArray;
 import model.RandomPerm;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static model.SwapPerm.*;
-import static model.InArray.*;
 
 
 class PermTests {
@@ -41,8 +41,8 @@ class PermTests {
         // array that will be altered
         int[] testArray = {1, 2, 3, 4, 5};
 
-        // invoke swapPerm method on the test array
-        swapPerm(testArray);
+        // invoke run method on the test array
+        run(testArray);
         for (int i1 : original) {
             System.out.print(i1+" " );
         }
@@ -52,14 +52,14 @@ class PermTests {
         }
         // check if all original values are in the altered array
         for (int i : original) {
-            assertTrue(inArray(i, testArray));
+            assertTrue(InArray.run(i, testArray));
         }
 
 
     }
 
     /**
-     * tests if inArray works correctly
+     * tests if run works correctly
      */
     @Test
     void InArrayTest() {
@@ -68,8 +68,8 @@ class PermTests {
         // test numbers
         int i = 1, j = 6;
         //should return true
-        assertTrue(inArray(i, testArray));
+        assertTrue(InArray.run(i, testArray));
         //should return false
-        assertFalse(inArray(j, testArray));
+        assertFalse(InArray.run(j, testArray));
     }
 }

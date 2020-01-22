@@ -29,14 +29,10 @@ public abstract class Permutation {
 
         for (int n : N) {
 
-            /**
-             * Stores the measurements of N
-             */
+            //Stores the measurements of N
             long[] results = new long[10];
 
-            // He's making an array, and he's checking it TEN times!!
-            // Gonna find out who's measuring it nice.
-            // Permutation is coming.. to TOWN!!
+            //run 10 times
             for (int i = 0; i < 10; i++) {
 
                 System.out.printf("(#%d of 10) Creating %d numbers.", i+1, n);
@@ -59,9 +55,8 @@ public abstract class Permutation {
 
             }
 
-            /**
-             * This will contain all the results combined so it later can be divided to calculate an average.
-             */
+
+            //This will contain all the results combined so it later can be divided to calculate an average.
             long result_sum = 0;
 
             // Display results.
