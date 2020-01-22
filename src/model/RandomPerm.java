@@ -1,6 +1,8 @@
 package model;
 
 import utils.Numbers;
+import static model.InArray.*;
+
 
 public class RandomPerm extends Permutation {
     private int[] numbers;
@@ -31,7 +33,7 @@ public class RandomPerm extends Permutation {
     private static int generateNumber(int max, int[] array) {
         while (true) { //n
             int number = Numbers.generateRandomNumber(0, max); // 1 statement
-            if (!Numbers.inArray(number, array)) { // 1 statement
+            if (!inArray(number, array)) { // 1 statement
                 return number; // 1 statement
             }
         }
