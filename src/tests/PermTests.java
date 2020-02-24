@@ -1,6 +1,6 @@
 package tests;
 
-import model.UserPerm;
+import model.UsedPerm;
 import model.RandomPerm;
 import model.SwapPerm;
 import org.junit.jupiter.api.Test;
@@ -56,7 +56,7 @@ class PermTests {
             }
             // check if all original values are in the altered array
             for (int i1 : original) {
-                assertTrue(UserPerm.run(i1, testArray));
+                assertTrue(UsedPerm.run(i1, testArray));
             }
             System.out.println();
 
@@ -74,8 +74,8 @@ class PermTests {
         // test numbers
         int i = 1, j = 6;
         //should return true
-        assertTrue(UserPerm.run(i, testArray));
+        assertTrue(UsedPerm.run(i, testArray));
         //should return false
-        assertFalse(UserPerm.run(j, testArray));
+        assertFalse(UsedPerm.run(j, testArray));
     }
 }

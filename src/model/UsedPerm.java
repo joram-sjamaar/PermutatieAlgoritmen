@@ -1,6 +1,6 @@
 package model;
 
-public class UserPerm {
+public class UsedPerm {
     public static boolean run(int number, int[] array) {
 
         for (int i1 : array) // n
@@ -9,4 +9,6 @@ public class UserPerm {
 
         return false;
     }
+
+
 }
