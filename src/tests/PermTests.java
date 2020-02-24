@@ -6,6 +6,7 @@ import model.SwapPerm;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static utils.Numbers.inArray;
 
 
 class PermTests {
@@ -56,7 +57,7 @@ class PermTests {
             }
             // check if all original values are in the altered array
             for (int i1 : original) {
-                assertTrue(UsedPerm.run(i1, testArray));
+                assertTrue(inArray(i1, testArray));
             }
             System.out.println();
 
@@ -68,14 +69,25 @@ class PermTests {
      * tests if run works correctly
      */
     @Test
-    void InArrayTest() {
-        // array we will test the method on
-        int[] testArray = {1, 2, 3, 4, 5};
-        // test numbers
-        int i = 1, j = 6;
-        //should return true
-        assertTrue(UsedPerm.run(i, testArray));
-        //should return false
-        assertFalse(UsedPerm.run(j, testArray));
+    void usedPermTest() {
+        System.out.println("--+ UsedPermTest +--");
+        for (int i = 0; i < AMOUNT_OF_TIMES; i++) {
+            UsedPerm perm = new UsedPerm();
+            //start the permutation
+            perm.run(12);
+            // get the numbers
+            int[] array = perm.getNumbers();
+
+            for (int k = 1; k < array.length; k++) {
+                for (int j = 0; j < k; j++) {
+                    assertNotEquals(array[k], array[j]);
+                }
+            }
+            // for debugging:
+            for (int j = 0; j < array.length; j++) {
+                System.out.print(array[j]+" ");
+            }
+            System.out.println();
+        }
     }
 }

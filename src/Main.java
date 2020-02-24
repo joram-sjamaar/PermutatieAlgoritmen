@@ -25,11 +25,14 @@ public class Main {
         RandomPerm perm  = new RandomPerm();
         for (int i : N) {
             perm.run(i);
+            perm = new RandomPerm();
         }
     }
     private void doUsedPerm(){
+        UsedPerm perm = new UsedPerm();
         for (int i = 0; i < N.length; i++) {
-//            UsedPerm.run();
+            perm.run(N[i]);
+            perm = new UsedPerm();
         }
     }
     private void doSwapPerm(){

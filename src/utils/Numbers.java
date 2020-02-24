@@ -16,4 +16,19 @@ public class Numbers {
         return arr;
     }
 
+    /**
+     * Iterates trough the array checking if the randomly generated number is in the array.
+     * @param number: the randomly generated number.
+     * @param array: the array which is to eb iterated.
+     * @return true if the number is in the array, false if not.
+     */
+    public static boolean inArray(int number, int[] array) {
+
+        for (int i1 : array) // n
+            if (i1 == number) // 1 statement
+                return true; // 1 statement
+
+        return false;
+    }
+
 }

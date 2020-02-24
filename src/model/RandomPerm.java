@@ -2,8 +2,10 @@ package model;
 
 import utils.Numbers;
 
+import static utils.Numbers.inArray;
 
-public class RandomPerm extends Permutation {
+
+public class RandomPerm {
     private int[] numbers;
 
     /**
@@ -11,7 +13,7 @@ public class RandomPerm extends Permutation {
      *
      * @param n amount to run with
      */
-    @Override
+
     public void run(int n) {
         numbers = new int[n]; // 1 statement
 
@@ -30,11 +32,13 @@ public class RandomPerm extends Permutation {
     private static int generateNumber(int max, int[] array) {
         while (true) { //n
             int number = Numbers.generateRandomNumber(0, max); // 1 statement
-            if (!UsedPerm.run(number, array)) { // n
+            if (!inArray(number, array)) { // n
                 return number; // 1 statement
             }
         }
     }
+
+
 
     public int[] getNumbers() {
         return numbers;
