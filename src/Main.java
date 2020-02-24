@@ -30,8 +30,8 @@ public class Main {
     }
     private void doUsedPerm(){
         UsedPerm perm = new UsedPerm();
-        for (int i = 0; i < N.length; i++) {
-            perm.run(N[i]);
+        for (int value : N) {
+            perm.run(value);
             perm = new UsedPerm();
         }
     }
