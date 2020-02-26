@@ -45,9 +45,9 @@ class PermTests {
             int[] original = {1, 2, 3, 4, 5};
             // array that will be altered
             int[] testArray = {1, 2, 3, 4, 5};
-
+            SwapPerm perm = new SwapPerm();
             // invoke run method on the test array
-            SwapPerm.run(testArray);
+            perm.run(testArray);
             for (int i1 : original) {
                 System.out.print(i1+" " );
             }

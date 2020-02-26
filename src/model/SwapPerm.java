@@ -3,7 +3,7 @@ package model;
 import java.util.Random;
 
 public class SwapPerm {
-    public static void run(int[] array) {
+    public void run(int[] array) {
         int temp, index;
 
         for (int i = 1; i < array.length; i++) {  // n
