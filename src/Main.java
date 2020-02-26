@@ -22,8 +22,8 @@ public class Main {
 
 
     private void run() {
-//        doRandomPerm();
-//        doUsedPerm();
+        doRandomPerm();
+        doUsedPerm();
         doSwapPerm();
     }
 
